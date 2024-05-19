@@ -1,0 +1,5 @@
+fastapi
+PyPDF2
+python-pptx
+requests
+python-dotenv

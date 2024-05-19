@@ -13,7 +13,7 @@ def call_api_and_print_response(text, typeoftopic, numoftopic):
     # 加载环境变量文件
     load_dotenv()
     API_KEY = os.getenv('API_KEY')
-
+    API_url = os.getenv('API_url ')
     # 设置请求头
     headers = {
         'Content-Type': 'application/json',
@@ -22,7 +22,7 @@ def call_api_and_print_response(text, typeoftopic, numoftopic):
 
     # 设置要发送的数据
     json_data = {
-        'model': 'yi-large',
+        'model': 'step-1-256k',
         'messages': [
             {   
                 'role': 'system',
@@ -39,7 +39,7 @@ def call_api_and_print_response(text, typeoftopic, numoftopic):
     }
 
     # 发送请求
-    response = requests.post('https://api.lingyiwanwu.com/v1/chat/completions', headers=headers, json=json_data)
+    response = requests.post(API_url, headers=headers, json=json_data)
 
     # 打印响应内容
     try:
