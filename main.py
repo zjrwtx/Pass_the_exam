@@ -13,7 +13,8 @@ def call_api_and_print_response(text, typeoftopic, numoftopic):
     # 加载环境变量文件
     load_dotenv()
     API_KEY = os.getenv('API_KEY')
-    API_url = os.getenv('API_url ')
+    API_url = os.getenv('API_url')
+
     # 设置请求头
     headers = {
         'Content-Type': 'application/json',
