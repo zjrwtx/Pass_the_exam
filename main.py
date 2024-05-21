@@ -49,7 +49,7 @@ def maketopics(text, typeoftopic, numoftopic):
 
     except (KeyError, IndexError, AttributeError):
         print("无法获取响应内容或响应格式不正确。")
-        return "出错啦"
+        return "出错啦！ 请联系和push一下开发者解决问题"
 
 
 
@@ -95,7 +95,7 @@ def mindmap(text):
 
     except (KeyError, IndexError, AttributeError):
         print("无法获取响应内容或响应格式不正确。")
-        return "出错啦"
+        return "出错啦！ 请联系和push一下开发者解决问题"
 
 app = FastAPI()
 app.add_middleware(
