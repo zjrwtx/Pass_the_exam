@@ -22,7 +22,7 @@ def maketopics(text, typeoftopic, numoftopic):
 
     # 设置要发送的数据
     json_data = {
-        'model': 'step-1-256k',
+        'model': 'yi-large',
         'messages': [
             {   
                 'role': 'system',
@@ -68,7 +68,7 @@ def mindmap(text):
 
     # 设置要发送的数据
     json_data = {
-        'model': 'step-1-256k',
+        'model': 'yi-large',
         'messages': [
             {   
                 'role': 'system',
