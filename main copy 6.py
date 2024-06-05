@@ -301,13 +301,6 @@ def slides_to_pdf(output_folder_screenshot_path):
     convert_screenshots_to_pdf(output_folder_screenshot_path, output_pdf_path)
     return output_pdf_path
 
-def clean_up(paths):
-    for path in paths:
-        if os.path.isdir(path):
-            shutil.rmtree(path)
-        elif os.path.isfile(path):
-            os.remove(path)
-
 @app.post("/upload/")
 async def upload_file(file: UploadFile = File(...)):
     video_path = f"{uuid.uuid4()}.mp4"
@@ -315,12 +308,8 @@ async def upload_file(file: UploadFile = File(...)):
         shutil.copyfileobj(file.file, video_file)
     output_folder_screenshot_path = video_to_slides(video_path)
     pdf_path = slides_to_pdf(output_folder_screenshot_path)
-    
-    response = FileResponse(pdf_path, media_type='application/pdf', filename=os.path.basename(pdf_path))
-    
-    clean_up([video_path, output_folder_screenshot_path])
-    
-    return response
+    return FileResponse(pdf_path, media_type='application/pdf', filename=os.path.basename(pdf_path))
+
 
 @app.post("/token", response_model=Token)
 async def login_for_access_token(form_data: OAuth2PasswordRequestForm = Depends(), db: Session = Depends(get_db)):
