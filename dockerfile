@@ -3,6 +3,7 @@ FROM python:3.10-slim
 
 # 更新软件包列表并安装FFmpeg和必要的构建工具
 # RUN apt-get update && apt-get install -y ffmpeg gcc
+RUN apt-get update && apt-get install -y libgl1-mesa-dev ffmpeg libsm6 libxext6  libgl1-mesa-glx
 
 # 设置工作目录
 WORKDIR /app

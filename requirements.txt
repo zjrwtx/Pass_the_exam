@@ -10,7 +10,7 @@ python-jose
 python-dotenv
 requests
 pymysql
-
+scikit-image
 
 opencv-python
 imutils
