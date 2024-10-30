@@ -1,4 +1,5 @@
 # 不挂科AI后端
+![image](https://github.com/user-attachments/assets/9de82070-8118-42f0-b569-32aee4f01715)
 
 ## 项目简介
 
